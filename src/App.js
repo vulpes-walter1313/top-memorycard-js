@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { GameSetup } from './components/GameSetup';
 import ScoreBoard from './components/ScoreBoard';
+import CardDisplay from './components/CardDisplay';
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -20,6 +21,10 @@ function App() {
       }
       {
         gameActive ? <ScoreBoard currentScore={currentScore} bestScore={bestScore}/> :
+        null
+      }
+      {
+        gameActive ? <CardDisplay level={gameSettings.level}/> :
         null
       }
     </div>
