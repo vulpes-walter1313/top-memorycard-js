@@ -40,9 +40,24 @@ The card display will be the display for the card in play. It will take in the f
    1. card id
    2. card image
    3. card order
+   4. card name
+2. Cards touched (by ID) - An Array of ids
+
+**Functions**
+clickHandler - This function should determine if the card has been touched before, if it has, then it ends the game, and displays the final modal. If not, the id is added to a list of cards touched. the scores should be sent back to App.js. And it should also reshuffle the cards.
 
 There should also be a functionality to shuffle the order or the cards in play, keeping in mind to only shuffle and display the cards currently in play. For example, if the player is playing on the easy level with 4 cards, the shuffle function should only reshuffle those cards. This leads me to believe that there will be an array of cards that are a reference and an array of cards that are currently active in play.
 
 ## Modal Win or Lose Component
 
 In the end of the game, there will be a modal that shows wether you've won or lost the game. As well as giving the player the option to play a new round.
+
+# Modules
+
+## CardModules
+
+This module should have the following functions:
+
+1. load initial standing of the cards.
+2. a funtion that shuffles the cards it's been given and returns the result.
+
