@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { GameSetup } from './components/GameSetup';
+import ScoreBoard from './components/ScoreBoard';
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -16,6 +17,10 @@ function App() {
       {
         gameActive ? <h1>Lets Play</h1> :
         <GameSetup settingsSetter={setGameSettings} setGameActive={setGameActive}/>
+      }
+      {
+        gameActive ? <ScoreBoard currentScore={currentScore} bestScore={bestScore}/> :
+        null
       }
     </div>
   );
