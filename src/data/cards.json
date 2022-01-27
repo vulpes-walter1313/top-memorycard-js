@@ -1,0 +1,112 @@
+[
+  {
+    "cardId": 0,
+    "cardImageUrl": "cardimgs/0.jpg",
+    "cardName": "The Fool"
+  },
+  {
+    "cardId": 1,
+    "cardImageUrl": "cardimgs/1.jpg",
+    "cardName": "The Magician"
+  },
+  {
+    "cardId": 2,
+    "cardImageUrl": "cardimgs/2.jpg",
+    "cardName": "The High Priestess"
+  },
+  {
+    "cardId": 3,
+    "cardImageUrl": "cardimgs/3.jpg",
+    "cardName": "The Empress"
+  },
+  {
+    "cardId": 4,
+    "cardImageUrl": "cardimgs/4.jpg",
+    "cardName": "The Emperor"
+  },
+  {
+    "cardId": 5,
+    "cardImageUrl": "cardimgs/5.jpg",
+    "cardName": "The Hierophant"
+  },
+  {
+    "cardId": 6,
+    "cardImageUrl": "cardimgs/6.jpg",
+    "cardName": "The Lovers"
+  },
+  {
+    "cardId": 7,
+    "cardImageUrl": "cardimgs/7.jpg",
+    "cardName": "The Chariot"
+  },
+  {
+    "cardId": 8,
+    "cardImageUrl": "cardimgs/8.jpg",
+    "cardName": "Strength"
+  },
+  {
+    "cardId": 9,
+    "cardImageUrl": "cardimgs/9.jpg",
+    "cardName": "The Hermit"
+  },
+  {
+    "cardId": 10,
+    "cardImageUrl": "cardimgs/10.jpg",
+    "cardName": "Wheel of Fortune"
+  },
+  {
+    "cardId": 11,
+    "cardImageUrl": "cardimgs/11.jpg",
+    "cardName": "Justice"
+  },
+  {
+    "cardId": 12,
+    "cardImageUrl": "cardimgs/12.jpg",
+    "cardName": "The Hanged Man"
+  },
+  {
+    "cardId": 13,
+    "cardImageUrl": "cardimgs/13.jpg",
+    "cardName": "Death"
+  },
+  {
+    "cardId": 14,
+    "cardImageUrl": "cardimgs/14.jpg",
+    "cardName": "Temprerance"
+  },
+  {
+    "cardId": 15,
+    "cardImageUrl": "cardimgs/15.jpg",
+    "cardName": "The Devil"
+  },
+  {
+    "cardId": 16,
+    "cardImageUrl": "cardimgs/16.jpg",
+    "cardName": "The Tower"
+  },
+  {
+    "cardId": 17,
+    "cardImageUrl": "cardimgs/17.jpg",
+    "cardName": "The Star"
+  },
+  {
+    "cardId": 18,
+    "cardImageUrl": "cardimgs/18.jpg",
+    "cardName": "The Moon"
+  },
+  {
+    "cardId": 19,
+    "cardImageUrl": "cardimgs/19.jpg",
+    "cardName": "The Sun"
+  },
+  {
+    "cardId": 20,
+    "cardImageUrl": "cardimgs/20.jpg",
+    "cardName": "Judgement"
+  },
+  {
+    "cardId": 21,
+    "cardImageUrl": "cardimgs/21.jpg",
+    "cardName": "The World"
+  }
+]
