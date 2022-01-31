@@ -17,7 +17,9 @@ class CardModule {
   }
 
   static shuffleCards(cards) {
-    
+    let newCards = [...cards];
+    newCards.sort(() => Math.random() - 0.5);
+    return newCards;
   }
 }
 
