@@ -2,27 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 
 export const GameSetup = (props) => {
-  const [playerName, setPlayerName] = useState('');
   const [level, setLevel] = useState('easy');
 
-  function playerNameChange(e) {
-    setPlayerName(e.target.value);
-  }
   function levelChange(e) {
     setLevel(e.target.value);
   }
   function formSubmitHandler(e) {
     e.preventDefault();
-    props.settingsSetter({level, playerName});
+    props.settingsSetter({level});
     props.setGameActive(true);
+    props.setGameOver(false);
   }
   return (
     <div className='game-setup-modal'>
       <form onSubmit={formSubmitHandler}>
-        <div className='name-input-group'>
-          <label htmlFor='name'>What is your name?</label>
-          <input type='text' name='name' id='name' value={playerName} onChange={playerNameChange}/>
-        </div>
         <div className='level-input-group' onChange={levelChange}>
           <p>Difficulty level?</p>
           <div>
