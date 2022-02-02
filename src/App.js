@@ -1,31 +1,65 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import { GameSetup } from './components/GameSetup';
 import ScoreBoard from './components/ScoreBoard';
 import CardDisplay from './components/CardDisplay';
+import GameOverModal from './components/GameOverModal';
+
+const scoreInitState = {
+  currentScore: 0,
+  bestScore: 0,
+  lastScore: 0
+}
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'score':
+      const newScore = state.currentScore + 1;
+      let newBestScore;
+      if (newScore > state.bestScore) {
+        newBestScore = newScore;
+      } else {
+        newBestScore = state.bestScore
+      }
+      return { currentScore: newScore, bestScore: newBestScore};
+    case 'reset':
+      return { currentScore: 0, bestScore: state.bestScore, lastScore: state.currentScore};
+    default:
+      return state;
+  }
+}
 
 function App() {
-  const [currentScore, setCurrentScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+  const [scoreData, scoreDispatch] = useReducer(reducer, scoreInitState);
   const [gameWon, setGameWon] = useState(false);
   const [gameActive, setGameActive] = useState(false);
-  const [gameSettings, setGameSettings] = useState({level: 'easy', playerName:''});
+  const [gameOver, setGameOver] = useState(false);
+  const [gameSettings, setGameSettings] = useState({level: 'easy'});
 
-  console.log(gameSettings);
+  console.log(gameSettings, gameActive);
   return (
     <div className="App">
       <h1>Memory card Game</h1>
       {
-        gameActive ? <h1>Lets Play</h1> :
-        <GameSetup settingsSetter={setGameSettings} setGameActive={setGameActive}/>
+        gameActive && !gameOver ? <h1>Lets Play</h1> :
+        <GameSetup
+          settingsSetter={setGameSettings}
+          setGameActive={setGameActive}
+          setGameOver={setGameOver}
+          />
       }
+      <ScoreBoard currentScore={scoreData.currentScore} bestScore={scoreData.bestScore}/>
       {
-        gameActive ? <ScoreBoard currentScore={currentScore} bestScore={bestScore}/> :
+        gameActive ? <CardDisplay
+          level={gameSettings.level}
+          setGameActive={setGameActive}
+          setGameOver={setGameOver}
+          scoreDispatch={scoreDispatch}/> :
         null
       }
       {
-        gameActive ? <CardDisplay level={gameSettings.level}/> :
-        null
+        gameOver ? <GameOverModal gameWon={gameWon} lastScore={scoreData.lastScore} bestScore={scoreData.bestScore}/> : null
+
       }
     </div>
   );
