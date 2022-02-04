@@ -1,0 +1,22 @@
+.wrapper {
+  background-color: rgb(127, 170, 250);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 1rem auto;
+  padding: 1rem 0;
+  width: 80vw;
+}
+.wrapper div {
+  flex: 0 1 150px;
+  cursor: pointer;
+}
+.wrapper div img {
+  width: 100%;
+  display: block;
+}
+.wrapper p {
+  background-color: cornsilk;
+  margin: 0 0 1rem;
+  padding: 1rem 0;
+}
