@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CardModule from '../modules/CardModule';
 import styles from './CardDisplay.module.css';
 
@@ -18,14 +18,17 @@ const CardDisplay = (props) => {
     setcardsClicked([...cardsClicked, id]);
     props.scoreDispatch({type: 'score'});
     setCards(CardModule.shuffleCards(cards));
-    // Add logic if all cards have been clicked here below.
+  }
+  
+  // useEffect to check if game has been won
+  useEffect(() => {
     if (cardsClicked.length === cards.length) {
       props.setGameWon(true);
       props.setGameActive(false);
       props.setGameOver(true);
-      return;
     }
-  }
+  }, [cardsClicked]);
+
   return (
   <div className={styles.wrapper}>
     {cards.map(card => (
