@@ -12,6 +12,8 @@ export const GameSetup = (props) => {
     props.settingsSetter({level});
     props.setGameActive(true);
     props.setGameOver(false);
+    props.setGameWon(false);
+    props.scoreDispatch({type: 'reset'});
   }
   return (
     <div className='game-setup-modal'>
