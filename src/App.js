@@ -21,7 +21,7 @@ const reducer = (state, action) => {
       } else {
         newBestScore = state.bestScore
       }
-      return { currentScore: newScore, bestScore: newBestScore};
+      return { currentScore: newScore, bestScore: newBestScore, lastScore: newScore};
     case 'reset':
       return { currentScore: 0, bestScore: state.bestScore, lastScore: state.currentScore};
     default:
@@ -39,16 +39,20 @@ function App() {
   console.log(gameSettings, gameActive);
   return (
     <div className="App">
-      <h1>Memory card Game</h1>
-      {
-        gameActive && !gameOver ? <h1>Lets Play</h1> :
-        <GameSetup
-          settingsSetter={setGameSettings}
-          setGameActive={setGameActive}
-          setGameOver={setGameOver}
-          />
-      }
-      <ScoreBoard currentScore={scoreData.currentScore} bestScore={scoreData.bestScore}/>
+      <header>
+        <h1>Tarot Memory Game</h1>
+        {
+          gameActive && !gameOver ? <h1>Lets Play</h1> :
+          <GameSetup
+            settingsSetter={setGameSettings}
+            setGameActive={setGameActive}
+            setGameOver={setGameOver}
+            setGameWon={setGameWon}
+            scoreDispatch={scoreDispatch}
+            />
+        }
+        <ScoreBoard currentScore={scoreData.currentScore} bestScore={scoreData.bestScore}/>
+      </header>
       {
         gameActive ? <CardDisplay
           level={gameSettings.level}
