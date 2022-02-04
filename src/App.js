@@ -54,6 +54,7 @@ function App() {
           level={gameSettings.level}
           setGameActive={setGameActive}
           setGameOver={setGameOver}
+          setGameWon={setGameWon}
           scoreDispatch={scoreDispatch}/> :
         null
       }
