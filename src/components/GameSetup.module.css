@@ -1,0 +1,18 @@
+.wrapper input[type="submit"] {
+  padding: .25rem;
+  margin: .5rem 0;
+  width: 100%;
+  color: var(--white);
+  font-size: 1.1rem;
+  text-decoration: none;
+  background: rgba(15,15,15,.65);
+  border: none;
+  cursor: pointer;
+} 
+
+.wrapper p {
+  font-size: 1.5rem;
+}
+.inputpair input {
+  margin: 0 .5rem 0 0;
+}
