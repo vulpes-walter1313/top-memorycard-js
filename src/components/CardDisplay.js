@@ -8,6 +8,7 @@ const CardDisplay = (props) => {
   const [cardsClicked, setcardsClicked] = useState([]);
 
   function clickHandler(id) {
+    // If card has been selected, then game is over
     if (cardsClicked.includes(id)) {
       props.setGameActive(false);
       props.setGameOver(true);
@@ -18,6 +19,12 @@ const CardDisplay = (props) => {
     props.scoreDispatch({type: 'score'});
     setCards(CardModule.shuffleCards(cards));
     // Add logic if all cards have been clicked here below.
+    if (cardsClicked.length === cards.length) {
+      props.setGameWon(true);
+      props.setGameActive(false);
+      props.setGameOver(true);
+      return;
+    }
   }
   return (
   <div className={styles.wrapper}>
