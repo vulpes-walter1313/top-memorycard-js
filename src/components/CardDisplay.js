@@ -6,13 +6,15 @@ import styles from './CardDisplay.module.css';
 const CardDisplay = (props) => {
   const [cards, setCards] = useState(CardModule.loadInitCards(props.level));
   const [cardsClicked, setcardsClicked] = useState([]);
+  const { setGameActive, setGameWon, setGameOver, scoreDispatch, setEndGameModal } = props;
 
   function clickHandler(id) {
     // If card has been selected, then game is over
     if (cardsClicked.includes(id)) {
-      props.setGameActive(false);
-      props.setGameOver(true);
-      props.scoreDispatch({type: 'reset'});
+      setGameActive(false);
+      setGameOver(true);
+      scoreDispatch({type: 'reset'});
+      setEndGameModal(true);
       return;
     }
     setcardsClicked([...cardsClicked, id]);
@@ -22,12 +24,14 @@ const CardDisplay = (props) => {
   
   // useEffect to check if game has been won
   useEffect(() => {
+    console.log("CArds UseEffect Triggered");
     if (cardsClicked.length === cards.length) {
-      props.setGameWon(true);
-      props.setGameActive(false);
-      props.setGameOver(true);
+      setGameWon(true);
+      setGameActive(false);
+      setGameOver(true);
+      setEndGameModal(true);
     }
-  }, [cardsClicked]);
+  }, [cardsClicked, setGameWon, setGameActive, setGameOver, setEndGameModal, cards]);
 
   return (
   <div className={styles.wrapper}>

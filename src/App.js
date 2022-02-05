@@ -35,6 +35,7 @@ function App() {
   const [gameActive, setGameActive] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [gameSettings, setGameSettings] = useState({level: 'easy'});
+  const [endGameModal, setEndGameModal] = useState(false);
 
   console.log(gameSettings, gameActive);
   return (
@@ -59,12 +60,16 @@ function App() {
           setGameActive={setGameActive}
           setGameOver={setGameOver}
           setGameWon={setGameWon}
-          scoreDispatch={scoreDispatch}/> :
+          scoreDispatch={scoreDispatch}
+          setEndGameModal={setEndGameModal}/> :
         null
       }
       {
-        gameOver ? <GameOverModal gameWon={gameWon} lastScore={scoreData.lastScore} bestScore={scoreData.bestScore}/> : null
-
+        endGameModal ? <GameOverModal
+          gameWon={gameWon}
+          lastScore={scoreData.lastScore}
+          bestScore={scoreData.bestScore}
+          setEndGameModal={setEndGameModal}/> : null
       }
     </div>
   );
