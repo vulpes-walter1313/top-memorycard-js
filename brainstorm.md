@@ -22,9 +22,9 @@ The root App component will keep the state of:
 4. Game Active Flag
 5. Game Settings
    1. Dificulty Level
-   2. Player Name
+6. Game Modal Active
 
-## Game Set up modal
+## Game Setup component
 
 This component will start in the begining to show the game settings just as level and as well accept the name of the player.
 
@@ -34,12 +34,16 @@ The card display will be the display for the card in play. It will take in the f
 
 **Props**
 1. Level - Game difficulty
+2. setGameActive
+3. setGameOver
+4. setGameWon
+5. setEndGameModal
 
 **State**
 1. Cards
    1. card id
    2. card image
-   3. card order
+   3. card order (maybe not even necessary)
    4. card name
 2. Cards touched (by ID) - An Array of ids
 
