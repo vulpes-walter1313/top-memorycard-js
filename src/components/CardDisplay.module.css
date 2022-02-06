@@ -9,10 +9,20 @@
   border-radius: 15px;
 }
 .wrapper div {
-  flex: 0 1 150px;
+  flex: 0 1 100px;
   cursor: pointer;
   border-radius: 15px;
 }
+@media screen and (min-width: 50rem) {
+  .wrapper div {
+    flex: 0 1 150px;
+  }
+}
+/* .wrapper div {
+  flex: 0 1 150px;
+  cursor: pointer;
+  border-radius: 15px;
+} */
 .wrapper div img {
   width: 100%;
   display: block;

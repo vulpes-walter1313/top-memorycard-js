@@ -17,9 +17,26 @@ body {
   color: var(--white);
 }
 
+/* For Mobile */
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+@media screen and (min-width: 50rem) {
+  header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
+/* For Desktop */
+/* 
 header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 2rem;
-}
+} */

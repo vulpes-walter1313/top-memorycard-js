@@ -11,8 +11,8 @@
 
 .content {
   position: relative;
-  width: 70%;
-  height: 30%;
+  min-width: 70%;
+  min-height: 30%;
   background-color: var(--white);
   color: var(--black);
   display: flex;
