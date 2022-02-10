@@ -15,6 +15,7 @@ const CardDisplay = (props) => {
       setGameOver(true);
       scoreDispatch({type: 'reset'});
       setEndGameModal(true);
+      setcardsClicked([]);
       return;
     }
     setcardsClicked([...cardsClicked, id]);
@@ -30,13 +31,14 @@ const CardDisplay = (props) => {
       setGameActive(false);
       setGameOver(true);
       setEndGameModal(true);
+      setcardsClicked([]);
     }
   }, [cardsClicked, setGameWon, setGameActive, setGameOver, setEndGameModal, cards]);
 
   return (
   <div className={styles.wrapper}>
     {cards.map(card => (
-      <div key={card.cardOrder} onClick={() => clickHandler(card.cardId)}>
+      <div key={card.cardId} onClick={() => clickHandler(card.cardId)}>
         <img src={card.cardImageUrl} alt={`${card.cardName} Card`}/>
         <p>{card.cardName}</p>
       </div>))}

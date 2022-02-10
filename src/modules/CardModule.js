@@ -12,7 +12,7 @@ class CardModule {
     } else if (level === 'expert') {
       numofCards = 22;
     }
-    const cardsData = cardInfo.map(card => ({...card, cardOrder: card.cardId})).splice(0, numofCards);
+    const cardsData = cardInfo.map(card => card).splice(0, numofCards);
     return cardsData;
   }
 
